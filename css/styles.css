@@ -1,0 +1,919 @@
+/* TALLER DISEÑO CON CSS */
+/* CONFIGURACIÓN GENERAL CSS LIUN!X.DEV*/
+
+/* Importamos una fuente para los titulos
+   y otra fuente para los parrafos. */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+/* Desde aqui controlo los colores. */
+:root {
+    --fondo: #24002F;
+    --morado: #44005A;
+    --morado-claro: #5C0870;
+    --neon: #20F5C5;
+    --neon-suave: #B5FFE9;
+    --texto: #D9FDF3;
+    --texto-secundario: #A4CFC4;
+}
+
+/* Hago que el padding y los bordes se incluyan
+   dentro del tamaño total de los elementos. */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos principales de toda la página. */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+
+    /* Marco exterior parecido al de la referencia. */
+    margin: 8px;
+    min-height: calc(100vh - 16px);
+    border: 1px solid var(--neon);
+    border-radius: 14px;
+    overflow-wrap: anywhere;
+}
+
+/* Los títulos tendrán una apariencia tecnológica. */
+h1, h2, h3, h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--neon);
+    line-height: 1.3;
+}
+
+/* Los enlaces heredarán los colores del diseño. */
+a {
+    color: var(--neon);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+/* Efecto al colocar el cursor sobre un enlace. */
+a:hover {
+    color: var(--neon-suave);
+}
+
+/* Paso 2. Encabezado y menú de navegación*/
+/* Tu HTML ya contiene header, nav, .logo y .nav-links. Vamos a distribuirlos horizontalmente, como en la imagen.*/
+
+
+/* =========================================
+   2. ENCABEZADO Y NAVEGACIÓN
+   ========================================= */
+
+/* Línea inferior del encabezado. */
+header {
+    border-bottom: 1px solid var(--neon);
+    padding: 16px 22px;
+}
+
+/* Coloca el logo a la izquierda
+   y el menú a la derecha. */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Nombre del portafolio. */
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--neon);
+    letter-spacing: -1px;
+}
+
+/* Lista de enlaces del menú. */
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+/* Apariencia de cada enlace. */
+.nav-links a {
+    display: inline-block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* El enlace se ilumina al pasar el cursor. */
+.nav-links a:hover {
+    text-shadow: 0 0 10px var(--neon);
+}
+
+/* Paso 3. Sección de inicio: el elemento principal*/
+/* Esta es la parte más importante del diseño. Vamos a centrar el título, darle un tamaño grande y destacar el enlace que conduce a tus proyectos.*/
+
+/* =========================================
+   3. PRESENTACIÓN INICIAL
+   ========================================= */
+
+/* Espacio y alineación de la sección de inicio. */
+#inicio {
+    min-height: 340px;
+    padding: 65px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid var(--neon);
+}
+
+/* Título principal grande y adaptable. */
+#inicio h1 {
+    max-width: 1000px;
+    font-size: clamp(2.1rem, 6vw, 4.8rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -3px;
+    line-height: 1.15;
+    margin-bottom: 24px;
+
+    /* Brillo suave del texto. */
+    text-shadow: 0 0 16px rgba(32, 245, 197, 0.18);
+}
+
+/* Párrafos de presentación. */
+#inicio p {
+    max-width: 720px;
+    color: var(--texto-secundario);
+    margin-bottom: 12px;
+    font-size: 1.15rem;
+}
+
+/* Botón para visitar los proyectos. */
+#inicio > a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    border: 1px solid var(--neon);
+    border-radius: 3px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* El botón se ilumina al pasar el cursor. */
+#inicio > a:hover {
+    background-color: var(--neon);
+    color: var(--fondo);
+    box-shadow: 0 0 18px rgba(32, 245, 197, 0.4);
+}
+
+
+/* Paso 4. Secciones y títulos*/
+/* Ahora daremos el mismo estilo a «Sobre mí», «Mis proyectos», «Tecnologías y habilidades» y «Contacto».*/
+
+
+/* =========================================
+   4. ESTILO DE LAS SECCIONES
+   ========================================= */
+
+/* Espaciado general de las secciones. */
+#sobre-mi,
+.seccion,
+#contacto {
+    padding: 55px 30px;
+    border-bottom: 1px solid var(--neon);
+}
+
+/* Títulos de las secciones. */
+#sobre-mi h2,
+.seccion h2,
+#contacto h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Texto de la sección Sobre mí. */
+#sobre-mi p {
+    max-width: 900px;
+    margin-bottom: 16px;
+    color: var(--texto-secundario);
+}
+
+/* Descripción que aparece bajo los títulos. */
+.seccion > p,
+.seccion-descripcion {
+    max-width: 900px;
+    margin-bottom: 28px;
+    color: var(--texto-secundario);
+}
+
+/* Paso 5. Tarjetas de proyectos*/
+/* Tu HTML ya contiene .proyectos-grid y .proyecto-card. Con CSS Grid podemos organizar los tres proyectos en columnas, con bordes neón y un efecto de elevación.*/
+
+
+/* =========================================
+   5. TARJETAS DE PROYECTOS
+   ========================================= */
+
+/* Distribuye las tarjetas en columnas adaptables. */
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 240px), 1fr)
+    );
+    gap: 16px;
+    margin-top: 30px;
+}
+
+/* Diseño individual de cada proyecto. */
+.proyecto-card {
+    background-color: var(--morado);
+    border: 1px solid var(--neon);
+    border-radius: 5px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+
+    /* Animación al interactuar con la tarjeta. */
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* La tarjeta se eleva ligeramente. */
+.proyecto-card:hover {
+    transform: translateY(-5px);
+    background-color: var(--morado-claro);
+    box-shadow: 0 0 16px rgba(32, 245, 197, 0.15);
+}
+
+/* Título de cada proyecto. */
+.proyecto-card h3 {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Descripción del proyecto. */
+.proyecto-card p {
+    color: var(--texto-secundario);
+}
+
+/* Destaca las tecnologías utilizadas. */
+.proyecto-card strong {
+    color: var(--neon-suave);
+}
+
+/* Enlace al repositorio. */
+.proyecto-card a {
+    margin-top: auto;
+    padding-top: 10px;
+    font-weight: 700;
+    border-bottom: 1px solid var(--neon);
+}
+/*La regla auto-fit hace que las tarjetas ocupen las columnas disponibles sin que tengas que indicar manualmente cuántas habrá en cada resolución.*/
+
+/* Paso 6. Tarjetas de habilidades*/
+/* Aplicaremos un estilo coherente a las tecnologías que conoces: HTML, CSS, JavaScript, Python, Java, Bash, Linux, Git y las demás.*/
+
+
+/* =========================================
+   6. TECNOLOGÍAS Y HABILIDADES
+   ========================================= */
+
+/* Cada categoría tiene su propio espacio. */
+.categoria-habilidades {
+    margin-top: 35px;
+}
+
+/* Título de cada grupo de habilidades. */
+.categoria-habilidades h3 {
+    font-size: 1rem;
+    margin-bottom: 18px;
+    padding-left: 12px;
+    border-left: 3px solid var(--neon);
+}
+
+/* Cuadrícula de tecnologías. */
+.habilidades-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 190px), 1fr)
+    );
+    gap: 12px;
+}
+
+/* Tarjeta individual de habilidad. */
+.habilidad-card {
+    background-color: rgba(68, 0, 90, 0.7);
+    border: 1px solid rgba(32, 245, 197, 0.6);
+    padding: 18px;
+    border-radius: 4px;
+
+    transition:
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* Efecto al pasar el cursor. */
+.habilidad-card:hover {
+    border-color: var(--neon);
+    transform: translateY(-3px);
+}
+
+/* Nombre de la tecnología. */
+.habilidad-card h4 {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+/* Descripción de la habilidad. */
+.habilidad-card p {
+    font-size: 1rem;
+    color: var(--texto-secundario);
+}
+/* Paso 7. Formulario de contacto
+Vamos a darle al formulario un estilo similar al de una terminal futurista, manteniendo campos legibles y un botón destacado.*/
+
+
+/* =========================================
+   7. FORMULARIO DE CONTACTO
+   ========================================= */
+
+/* Limita el ancho y centra el formulario. */
+#contacto form {
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Estilos compartidos por los campos. */
+#contacto input,
+#contacto textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: var(--morado);
+    color: var(--texto);
+    border: 1px solid rgba(32, 245, 197, 0.65);
+    border-radius: 3px;
+    font: inherit;
+    outline: none;
+}
+
+/* Color del texto de ayuda. */
+#contacto input::placeholder,
+#contacto textarea::placeholder {
+    color: var(--texto-secundario);
+}
+
+/* Resalta el campo que se está utilizando. */
+#contacto input:focus,
+#contacto textarea:focus {
+    border-color: var(--neon);
+    box-shadow: 0 0 10px rgba(32, 245, 197, 0.15);
+}
+
+/* Área de escritura del mensaje. */
+#contacto textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Botón de envío. */
+#contacto button {
+    align-self: flex-start;
+    padding: 12px 28px;
+    background-color: transparent;
+    color: var(--neon);
+    border: 1px solid var(--neon);
+    border-radius: 3px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+/* Cambio de colores al pasar el cursor. */
+#contacto button:hover {
+    background-color: var(--neon);
+    color: var(--fondo);
+    box-shadow: 0 0 15px rgba(32, 245, 197, 0.25);
+}
+
+/* Nota: estos estilos solo cambian la apariencia. Para que el formulario envíe mensajes necesitarás conectarlo a un servicio o desarrollar la lógica correspondiente.
+Paso 8. Pie de página*/
+
+
+/* =========================================
+   8. PIE DE PÁGINA
+   ========================================= */
+
+footer {
+    padding: 24px 16px;
+    text-align: center;
+    background-color: var(--fondo);
+}
+
+/* Texto de derechos reservados. */
+footer p {
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+}
+
+/* Paso 9. Adaptación para móviles
+Finalmente, vamos a ajustar la navegación, el título y los espacios para que el portafolio se vea bien en móviles y tabletas.*/
+
+
+/* =========================================
+   9. DISEÑO RESPONSIVE
+   ========================================= */
+
+/* Ajustes para móviles y pantallas estrechas. */
+@media (max-width: 100px) {
+
+    /* Reduce los espacios del encabezado. */
+    header {
+        padding: 16px;
+    }
+
+    /* Centra el menú cuando no cabe en una fila. */
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        justify-content: flex-start;
+        gap: 12px 18px;
+    }
+
+    .nav-links a {
+        font-size: 0.65rem;
+    }
+
+    /* Reduce el tamaño del título principal. */
+    #inicio {
+        min-height: 300px;
+        padding: 48px 18px;
+    }
+
+    #inicio h1 {
+        letter-spacing: -1px;
+    }
+
+    /* Reduce el espacio lateral de las secciones. */
+    #sobre-mi,
+    .seccion,
+    #contacto {
+        padding: 38px 18px;
+    }
+}
+
+/* Ajustes adicionales para móviles muy pequeños. */
+@media (max-width: 380px) {
+
+    body {
+        margin: 4px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 0.6rem;
+    }
+
+    #inicio h1 {
+        font-size: 1.9rem;
+    }
+}
+/* Fondo tecnológico para la sección de inicio */
+#inicio {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            rgba(36, 0, 47, 0.78),
+            rgba(36, 0, 47, 0.92)
+        ),
+        url("../img/fondo-tech.jpg") center / cover no-repeat;
+}
+
+/* Brillo decorativo neón */
+#inicio::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(32, 245, 197, 0.12),
+        transparent 65%
+    );
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Fondo tecnológico para la sección de inicio */
+#sobre-mi {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            rgba(36, 0, 47, 0.78),
+            rgba(36, 0, 47, 0.92)
+        ),
+        url("../img/proyecto-python.jpg") center / cover no-repeat;
+}
+
+/* Brillo decorativo neón */
+#sobre-mi::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(32, 245, 197, 0.12),
+        transparent 65%
+    );
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Fondo tecnológico para la sección de proyectos */
+#proyectos {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            rgba(36, 0, 47, 0.78),
+            rgba(36, 0, 47, 0.92)
+        ),
+        url("../img/proyecto-web.jpg") center / cover no-repeat;
+}
+
+/* Brillo decorativo neón */
+#proyectos::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(32, 245, 197, 0.12),
+        transparent 65%
+    );
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Imágenes de las tarjetas de proyectos */
+.proyecto-card {
+    overflow: hidden;
+    padding: 0 0 22px;
+}
+
+/* Imagen superior */
+.proyecto-imagen {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--neon);
+    transition: transform 0.4s ease;
+}
+
+/* Efecto zoom */
+.proyecto-card:hover .proyecto-imagen {
+    transform: scale(1.04);
+}
+
+/* Espaciado del contenido */
+.proyecto-card h3,
+.proyecto-card p,
+.proyecto-card > a {
+    margin-left: 22px;
+    margin-right: 22px;
+}
+
+/* Mantiene el enlace al final de la tarjeta */
+.proyecto-card > a {
+    margin-top: auto;
+}
+
+
+.tecnologia-icono {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    margin-bottom: 14px;
+    transition: transform 0.25s ease;
+}
+
+.habilidad-card:hover .tecnologia-icono {
+    transform: translateY(-4px) scale(1.08);
+}
+
+/*   10. TALLER: CONSUMO DE API REST */
+
+#usuarios-api {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            rgba(36, 0, 47, 0.88),
+            rgba(36, 0, 47, 0.96)
+        ),
+        url("/img/fondo-tech.jpg") center / cover no-repeat;
+}
+
+/* Panel principal de la API */
+.api-panel {
+    margin-top: 28px;
+    padding: 22px;
+    background: rgba(36, 0, 47, 0.75);
+    border: 1px solid var(--neon);
+    border-radius: 8px;
+    min-width: 0;
+}
+
+/* Encabezado inspirado en una terminal */
+.api-encabezado {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(32, 245, 197, 0.35);
+    color: var(--neon);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.85rem;
+    overflow-wrap: anywhere;
+}
+
+.api-indicador {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+    background: var(--neon);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--neon);
+}
+
+/* Contador y botón de recarga */
+.api-resumen {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 20px 0;
+}
+
+.api-resumen strong {
+    color: var(--neon);
+}
+
+#btn-recargar-usuario {
+    padding: 10px 16px;
+    background: transparent;
+    color: var(--neon);
+    border: 1px solid var(--neon);
+    border-radius: 4px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.25s ease,
+                color 0.25s ease;
+}
+
+#btn-recargar-usuario:hover {
+    background: var(--neon);
+    color: var(--fondo);
+}
+
+#btn-recargar-usuario:focus-visible {
+    outline: 2px solid var(--neon-suave);
+    outline-offset: 4px;
+}
+
+#btn-recargar-usuario {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+/* Cuadrícula adaptable de usuarios */
+.usuarios-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 230px), 1fr)
+    );
+    gap: 18px;
+}
+
+/* Tarjeta de cada usuario */
+.usuario-card {
+    min-width: 0;
+    padding: 20px;
+    background: rgba(68, 0, 90, 0.8);
+    border: 1px solid rgba(32, 245, 197, 0.55);
+    border-radius: 6px;
+    overflow-wrap: anywhere;
+    transition: transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.usuario-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--neon);
+    box-shadow: 0 0 16px rgba(32, 245, 197, 0.15);
+}
+
+.usuario-numero {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 4px 9px;
+    color: var(--neon);
+    border: 1px solid rgba(32, 245, 197, 0.45);
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+.usuario-card h3 {
+    margin-bottom: 14px;
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+}
+
+.usuario-card p {
+    margin-top: 9px;
+    color: var(--texto-secundario);
+    font-size: 1rem;
+}
+
+.usuario-card strong {
+    color: var(--neon-suave);
+}
+
+/* Mensajes de carga y error */
+.api-mensaje {
+    grid-column: 1 / -1;
+    padding: 24px 12px;
+    color: var(--texto-secundario);
+    text-align: center;
+}
+
+.api-error {
+    color: #ffb4c0;
+}
+
+@media (max-width: 100px) {
+    .api-panel {
+        padding: 16px;
+    }
+
+    .api-resumen {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    #btn--usuario {
+        width: 100%;
+    }
+
+    .usuarios-grid {
+        grid-template-columns: 1fr;
+    }
+}
+#estado.error {
+    color: #ffb4c0;
+}
+
+/* Espacio entre los botones de la portada */
+.acciones-inicio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+/* Sección de proyectos */
+.proyectos {
+    padding: 60px 8%;
+}
+
+.proyectos h2 {
+    margin-bottom: 28px;
+}
+
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.proyecto {
+    padding: 24px;
+    border: 1px solid #20F5C5;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.proyecto h3 {
+    margin-top: 0;
+}
+
+.proyecto p {
+    line-height: 1.7;
+}
+
+.proyecto span {
+    color: #20F5C5;
+    font-size: 0.9rem;
+}
+
+/* Perfil y diario de construcción */
+.perfil {
+    padding: 60px 8%;
+    line-height: 1.7;
+}
+
+.entrada {
+    margin-top: 20px;
+    padding: 20px;
+    border-left: 3px solid #20F5C5;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.entrada span {
+    color: #20F5C5;
+    font-size: 0.9rem;
+}
+
+.entrada h4 {
+    margin-bottom: 8px;
+}
+/* Navegación fija */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Desplazamiento suave entre secciones */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Evita que la barra tape los títulos */
+#inicio,
+#perfil,
+#detalles {
+    scroll-margin-top: 90px;
+}
+/* Enlaces de las tarjetas de proyectos */
+.proyecto a {
+    display: inline-block;
+    margin-top: 8px;
+    color: #20F5C5;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.proyecto a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}

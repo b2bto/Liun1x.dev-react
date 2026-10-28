@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- El titulo aparece en la pestaña del navegador -->
+    <title>Liun1x.dev | Portafolio WEB</title>
+
+    <!-- Esta sera la conexion con la hoja de estilo -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+    <!-- Aqui encontrare el encabezado y el menu de navegacion -->
+    <header>
+        <nav>
+            <!-- Aqui estara el nmmbre que identifica mi portafolio -->
+            <div class="logo">Liun1x.dev</div>
+
+            <!-- Aqui estaran los enlaces para moverme entre las secciones del proyecto -->
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#usuarios-api">API REST</a></li>
+                <li><a href="#habilidades">Tecnologias</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Este sera el contenido del portafolio -->
+    <main>
+
+        <!-- En esta seccion ira la presentacion inicial -->
+        <section id="inicio">
+            <h1>Explorando el mundo del desarrollo y la tecnología</h1>
+
+            <p>
+                Hola, soy Liun1x. Me interesa el desarrollo web,
+                la programación y la automatización de tareas con Python.
+            </p>
+
+            <p>
+                Este es mi espacio personal, donde comparto mis proyectos,
+                lo que voy aprendiendo y las ideas que desarrollo mediante código.
+            </p>
+
+            <!-- Enlace que llevara a mis proyectos :) -->
+            <a href="#proyectos">Conoce mis proyectos</a>
+        </section>
+
+        <!-- Esta seccion llevara info sobre mi -->
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <p>
+                ¡Hola! Soy Liun1x, una persona apasionada por la tecnología,
+                la programación y el aprendizaje constante.
+            </p>
+            <p>
+                Me interesa el desarrollo web, la automatización de tareas 
+                con Python y la exploración de sistemas Linux. Mi objetivo
+                es fortalecer mis conocimientos creando proyectos prácticos
+                y buscando soluciones a problemas reales mediante el código.
+            </p>
+            <p>
+                Este portafolio es un espacio donde comparto mi proceso
+                de aprendizaje, mis proyectos y las tecnologías que voy
+                descubriendo en el camino.
+            </p>
+            
+        </section>
+
+        <!-- Aqui presento los proyectos que he realizado o estoy desarrollando -->
+        <section id="proyectos" class="seccion">
+            <h2>Mis proyectos</h2>
+
+            <p>
+                Algunos de mis proyectos personales, ejercicios de programación
+                y desarrollos realizados durante mi aprendizaje.
+            </p>
+
+            <!-- Aqui vere el contenedor de las tarjetas del proyecto -->
+            <div class="proyectos-grid">
+
+                <!-- Primera tarjeta portafolio -->
+                <article class="proyecto-card">
+                    <img
+                        class="proyecto-imagen"
+                        src="img/arte-htm.jpeg"
+                        alt="Vista previa de mi portafolio web"
+                        loading="lazy"
+                    >
+
+                    <h3>Mi portafolio web</h3>
+
+                    <p>
+                        Sitio web personal desarrollado con HTML y CSS
+                        para presentar mi perfil, mis intereses y mis proyectos.
+                    </p>
+
+                    <p>
+                        <strong>Tecnologías:</strong> HTML y CSS.
+                    </p>
+
+                    <!-- Mi repositorio -->
+                    <a href="https://github.com/b2bto"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Ver código en GitHub →
+                    </a>
+                </article>
+
+                <!-- Segunda tarjeta ejercicios de Python -->
+                 <article class="proyecto-card">
+                    <img
+                        class="proyecto-imagen"
+                        src="img/autoinforme-py.jpeg"
+                        alt="Vista previa de mi portafolio web"
+                        loading="lazy"
+                    >
+                    
+                    <h3>Automatización con Python</h3>
+
+                    <p>
+                        Programas y ejercicios para automatizar tareas
+                        y explorar las posibilidades de Python.
+                    </p>
+
+                    <p>
+                        <strong>Tecnología:</strong> Python.
+                    </p>
+
+                    <a href="https://github.com/b2bto/Auto-Informe.git"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Ver código en GitHub →
+                    </a>
+                </article>
+
+                <!-- Tercera tarjeta proyecto a desarrollar -->
+                <article class="proyecto-card">
+                    <img
+                        class="proyecto-imagen"
+                        src="img/awesome-rc-lua.jpeg"
+                        alt="Vista previa de mi portafolio web"
+                        loading="lazy"
+                    >
+                    <h3>Proyecto Linux</h3>
+
+                    <p>
+                        Un espacio para documentar comandos, scripts,
+                        configuraciones y experimentos con sistemas Linux.
+                    </p>
+
+                    <p>
+                        <strong>Tecnologías:</strong> Linux y Bash.
+                    </p>
+
+                    <a href="https://github.com/b2bto/Awesome-WM.git">
+                        Ver código en GitHub →
+                    </a>
+                </article>
+
+            </div>
+        </section>
+        
+        <!-- Taller consumo de API -->
+        <section id="usuarios-api" class="seccion">
+            <h2>Directorio de usuarios</h2>
+
+            <p class="seccion-descripcion">
+                Consulto una API REST pública mediante JavaScript
+                para obtener y mostrar información de usuarios.
+            </p>
+
+            <div class="api-panel">
+                <div class="api-encabezado">
+                    <span class="api-indicador"></span>
+                    <span>JSONPlaceholder / Users API</span>
+                </div>
+
+                <div class="api-resumen">
+                    <p id="estado" aria-live="polite">
+                        Preparando consulta...
+                    </p>
+
+                    <p id="contador">
+                        Esperando usuarios...
+                    </p>
+
+                    <button id="btn-recargar-usuario" type="button">
+                        Recargar usuarios
+                    </button>
+                </div>
+
+                <div id="usuarios"
+                    class="usuarios-grid"
+                    aria-busy="true">
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Seccion para organizo los conocimientos -->
+        <section id="habilidades" class="seccion">
+            <h2>Tecnologías y habilidades</h2>
+
+            <p class="seccion-descripcion">
+                Cuento con conocimientos en desarrollo web, programación,
+                administración de sistemas y herramientas tecnológicas.
+                Continúo aprendiendo y fortaleciendo mis habilidades mediante
+                la práctica y el desarrollo de proyectos personales.
+            </p>
+
+            <!-- Lenguaje y herramientas relacionados con la web -->
+            <div class="categoria-habilidades">
+                <h3>Desarrollo web</h3>
+
+                <div class="habilidades-grid">
+                    <article class="habilidad-card">
+                        <h4>HTML5</h4>
+                        <p>Estructuración y organización del contenido web.</p>
+                    </article>
+
+                    <article class="habilidad-card">
+                        <h4>CSS3</h4>
+                        <p>Estilos, diseño visual y maquetación de páginas web.</p>
+                    </article>
+
+                    <article class="habilidad-card">
+                        <h4>JavaScript</h4>
+                        <p>Fundamentos de programación e interactividad web.</p>
+                    </article>
+
+                    <article class="habilidad-card">
+                        <h4>Diseño web</h4>
+                        <p>Conocimientos de diseño, composición y presentación de interfaces.</p>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Lenguajes que utilizo para aprender programacion -->
+            <div class="categoria-habilidades">
+                <h3>Programación y scripting</h3>
+
+                <div class="habilidades-grid">
+                    <article class="habilidad-card">
+                        <h4>Python</h4>
+                        <p>Conocimientos básicos de programación y automatización.</p>
+                    </article>
+
+                    <article class="habilidad-card">
+                        <h4>Java</h4>
+                        <p>Conocimientos de los fundamentos del lenguaje.</p>
+                    </article>
+
+                    <article class="habilidad-card">
+                        <h4>Bash</h4>
+                        <p>Scripts, comandos y automatización en entornos Linux.</p>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Aqui sistemas operativos y uso de la terminal -->
+            <div class="categoria-habilidades">
+                <h3>Sistemas operativos y terminal</h3>
+
+                <div class="habilidades-grid">
+                    <article class="habilidad-card">
+                        <h4>Linux</h4>
+                        <p>Manejo del sistema, terminal y comandos de consola.</p>
+                    </article>
+
+                    <article class="habilidad-card">
+                        <h4>Windows</h4>
+                        <p>Manejo del entorno y sus herramientas principales.</p>
+                    </article>
+
+                    <article class="habilidad-card">
+                        <h4>Línea de comandos</h4>
+                        <p>Uso de terminales y herramientas de línea de comandos.</p>
+                    </article>
+
+                    <article class="habilidad-card">
+                        <h4>Entornos virtuales</h4>
+                        <p>Conocimientos de configuración y uso de entornos aislados.</p>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Herramientas para desarrollar mis proyectos -->
+            <div class="categoria-habilidades">
+                <h3>Herramientas y tecnologías</h3>
+
+                <div class="habilidades-grid">
+                    <article class="habilidad-card">
+                        <h4>Git</h4>
+                        <p>Control de versiones y seguimiento de cambios en proyectos.</p>
+                    </article>
+
+                    <article class="habilidad-card">
+                        <h4>GitHub</h4>
+                        <p>Gestión y publicación de repositorios de código.</p>
+                    </article>
+
+                    <article class="habilidad-card">
+                        <h4>Inteligencia artificial</h4>
+                        <p>Conocimientos sobre herramientas de IA y su aplicación en el desarrollo.</p>
+                    </article>
+
+                    <article class="habilidad-card">
+                        <h4>Frameworks</h4>
+                        <p>Conocimientos sobre frameworks y herramientas para el desarrollo de software.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+         <!-- Formulario para  los visitantes puedan escribirme un mensaje -->
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form action="">
+                <!-- Campo para ingresar el nombre -->
+                <input type="text" placeholder="Nombre" required>
+
+                <!-- Campo para ingresar un correo valido -->
+                <input type="email" placeholder="Email" required>
+
+                <!-- Campo para escribir el mensaje -->
+                <textarea placeholder="Mensaje" required></textarea>
+
+                <!-- Boton para enviar el formulario -->
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Pie de pagina -->
+    <footer>
+        <p>
+            &copy; Liun1x.dev. Todos los derechos reservados.
+        </p>
+    </footer>
+    <script src="/js/app.js" defer></script>
+</body>
+</html>

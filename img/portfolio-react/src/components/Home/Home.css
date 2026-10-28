@@ -1,0 +1,125 @@
+.home-page {
+  min-height: calc(100svh - 78px);
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 3vw, 2.25rem);
+  background:
+    radial-gradient(circle at 10% 12%, #f8e1c4 0%, transparent 32%),
+    radial-gradient(circle at 90% 20%, #d9efe3 0%, transparent 33%),
+    linear-gradient(145deg, #f4efe8, #ebf3ef);
+}
+
+.home-hero {
+  width: min(920px, 100%);
+  border: 1px solid rgba(31, 51, 43, 0.14);
+  border-radius: 28px;
+  padding: clamp(1.3rem, 5vw, 3.2rem);
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 24px 65px rgba(18, 30, 25, 0.15);
+  backdrop-filter: blur(9px);
+  animation: home-rise 560ms ease-out;
+}
+
+.home-kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  font-size: 0.77rem;
+  color: #5b7166;
+}
+
+.home-hero h1 {
+  margin: 0.45rem 0 0;
+  line-height: 1.04;
+  color: #122921;
+  font-size: clamp(1.85rem, 5vw, 3.6rem);
+}
+
+.home-subtitle {
+  margin-top: 1.05rem;
+  color: #345046;
+  line-height: 1.72;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-actions {
+  margin-top: 1.45rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-btn {
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.6rem 1.05rem;
+  border-radius: 12px;
+  font-weight: 600;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+.home-btn:hover {
+  transform: translateY(-2px);
+}
+
+.home-btn-primary {
+  color: #f2f8f5;
+  background: #173b2f;
+}
+
+.home-btn-primary:hover {
+  background: #102f25;
+  box-shadow: 0 10px 24px rgba(14, 43, 33, 0.24);
+}
+
+.home-btn-secondary {
+  color: #1b4837;
+  background: #e2f2e9;
+  border: 1px solid rgba(22, 85, 58, 0.2);
+}
+
+.home-btn-secondary:hover {
+  box-shadow: 0 10px 22px rgba(25, 72, 56, 0.13);
+}
+
+.home-btn:focus-visible {
+  outline: 2px solid #2b5f4d;
+  outline-offset: 2px;
+}
+
+@keyframes home-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 720px) {
+  .home-page {
+    min-height: calc(100svh - 64px);
+  }
+
+  .home-hero {
+    border-radius: 18px;
+  }
+
+  .home-subtitle {
+    line-height: 1.58;
+  }
+}
