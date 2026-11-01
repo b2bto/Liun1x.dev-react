@@ -55,8 +55,9 @@ function UsuariosAPI() {
       </p>
 
       <button
+        id="btn-recargar-usuario"
         type="button"
-        className="boton"
+        className={`boton ${cargando ? "cargando" : ""}`}
         onClick={cargarUsuarios}
         disabled={cargando}
       >

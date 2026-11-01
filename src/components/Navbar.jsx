@@ -26,6 +26,11 @@ function Navbar() {
             Proyectos
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/#usuarios-api">
+            API REST
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

@@ -1,11 +1,10 @@
-/* TALLER DISEÑO CON CSS */
-/* CONFIGURACIÓN GENERAL CSS LIUN!X.DEV*/
-
-/* Importamos una fuente para los titulos
-   y otra fuente para los parrafos. */
+/* Importo las fuentes que utilizo para darle al portafolio
+   ese estilo tecnológico que quiero mantener. */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap');
 
-/* Desde aqui controlo los colores. */
+/* Aquí guardo los colores que utilizo en el portafolio.
+   Así puedo reutilizarlos en diferentes partes del CSS
+   sin tener que escribir el código de cada color nuevamente. */
 :root {
     --fondo: #24002F;
     --morado: #44005A;
@@ -16,20 +15,26 @@
     --texto-secundario: #A4CFC4;
 }
 
-/* Hago que el padding y los bordes se incluyan
-   dentro del tamaño total de los elementos. */
+/* Aplico estos ajustes generales para quitar los espacios
+   que trae el navegador por defecto y tener mejor control
+   sobre el tamaño de los elementos. */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Estilos principales de toda la página. */
+/* Hago que el desplazamiento entre las diferentes secciones
+   sea más suave y dejo un espacio superior para que el menú
+   no tape el contenido al navegar. */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 90px;
 }
 
+/* Defino la apariencia general de toda la página:
+   el color de fondo, el color y tipo de letra, los tamaños
+   y algunos detalles del borde exterior. */
 body {
     background-color: var(--fondo);
     color: var(--texto);
@@ -37,7 +42,6 @@ body {
     font-size: 18px;
     line-height: 1.6;
 
-    /* Marco exterior parecido al de la referencia. */
     margin: 8px;
     min-height: calc(100vh - 16px);
     border: 1px solid var(--neon);
@@ -45,41 +49,38 @@ body {
     overflow-wrap: anywhere;
 }
 
-/* Los títulos tendrán una apariencia tecnológica. */
+/* Mantengo los títulos con la fuente Orbitron
+   y el color neón para conservar la misma línea gráfica. */
 h1, h2, h3, h4 {
     font-family: 'Orbitron', sans-serif;
     color: var(--neon);
     line-height: 1.3;
 }
 
-/* Los enlaces heredarán los colores del diseño. */
+/* Defino el color de los enlaces y quito el subrayado
+   que aparece normalmente en el navegador. */
 a {
     color: var(--neon);
     text-decoration: none;
     transition: color 0.25s ease;
 }
 
-/* Efecto al colocar el cursor sobre un enlace. */
+/* Cambio ligeramente el color cuando paso el cursor
+   sobre un enlace. */
 a:hover {
     color: var(--neon-suave);
 }
 
-/* Paso 2. Encabezado y menú de navegación*/
-/* Tu HTML ya contiene header, nav, .logo y .nav-links. Vamos a distribuirlos horizontalmente, como en la imagen.*/
-
-
-/* =========================================
-   2. ENCABEZADO Y NAVEGACIÓN
-   ========================================= */
-
-/* Línea inferior del encabezado. */
+/* Esta parte corresponde al encabezado de la página.
+   Le agrego un borde inferior y espacio interno para separarlo
+   visualmente del resto del contenido. */
 header {
     border-bottom: 1px solid var(--neon);
     padding: 16px 22px;
 }
 
-/* Coloca el logo a la izquierda
-   y el menú a la derecha. */
+/* Organizo los elementos del menú utilizando Flexbox
+   para distribuir el logo y los enlaces. */
 nav {
     display: flex;
     justify-content: space-between;
@@ -88,7 +89,7 @@ nav {
     flex-wrap: wrap;
 }
 
-/* Nombre del portafolio. */
+/* Estilos del nombre que utilizo como logo del portafolio. */
 .logo {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.15rem;
@@ -97,7 +98,8 @@ nav {
     letter-spacing: -1px;
 }
 
-/* Lista de enlaces del menú. */
+/* Organizo los enlaces de navegación y dejo espacio
+   entre ellos para que no queden demasiado juntos. */
 .nav-links {
     display: flex;
     align-items: center;
@@ -107,7 +109,9 @@ nav {
     flex-wrap: wrap;
 }
 
-/* Apariencia de cada enlace. */
+/* Ajusto la presentación de los enlaces del menú:
+   utilizo la misma fuente de los títulos y los muestro
+   en mayúsculas. */
 .nav-links a {
     display: inline-block;
     font-family: 'Orbitron', sans-serif;
@@ -116,19 +120,15 @@ nav {
     letter-spacing: 1px;
 }
 
-/* El enlace se ilumina al pasar el cursor. */
+/* Agrego un pequeño brillo cuando el cursor pasa
+   por encima de las opciones del menú. */
 .nav-links a:hover {
     text-shadow: 0 0 10px var(--neon);
 }
 
-/* Paso 3. Sección de inicio: el elemento principal*/
-/* Esta es la parte más importante del diseño. Vamos a centrar el título, darle un tamaño grande y destacar el enlace que conduce a tus proyectos.*/
-
-/* =========================================
-   3. PRESENTACIÓN INICIAL
-   ========================================= */
-
-/* Espacio y alineación de la sección de inicio. */
+/* Esta es la primera sección que se muestra al entrar
+   al portafolio. Organizo su contenido en columna y lo centro
+   para que el título y el texto sean lo primero que se vea. */
 #inicio {
     min-height: 340px;
     padding: 65px 24px;
@@ -140,7 +140,9 @@ nav {
     border-bottom: 1px solid var(--neon);
 }
 
-/* Título principal grande y adaptable. */
+/* Ajusto el título principal para que tenga un tamaño
+   que se adapte al espacio disponible y mantenga
+   su importancia dentro de la página. */
 #inicio h1 {
     max-width: 1000px;
     font-size: clamp(2.1rem, 6vw, 4.8rem);
@@ -150,11 +152,11 @@ nav {
     line-height: 1.15;
     margin-bottom: 24px;
 
-    /* Brillo suave del texto. */
     text-shadow: 0 0 16px rgba(32, 245, 197, 0.18);
 }
 
-/* Párrafos de presentación. */
+/* Limito el ancho del texto para que sea más fácil
+   de leer y no ocupe demasiado espacio horizontal. */
 #inicio p {
     max-width: 720px;
     color: var(--texto-secundario);
@@ -162,7 +164,8 @@ nav {
     font-size: 1.15rem;
 }
 
-/* Botón para visitar los proyectos. */
+/* Le doy apariencia de botón al enlace principal
+   que aparece en la sección de inicio. */
 #inicio > a {
     display: inline-block;
     margin-top: 20px;
@@ -174,30 +177,22 @@ nav {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-
     transition:
         background-color 0.25s ease,
         color 0.25s ease,
         box-shadow 0.25s ease;
 }
 
-/* El botón se ilumina al pasar el cursor. */
+/* Cuando paso el cursor sobre el botón,
+   cambio el fondo y el color del texto y agrego un brillo. */
 #inicio > a:hover {
     background-color: var(--neon);
     color: var(--fondo);
     box-shadow: 0 0 18px rgba(32, 245, 197, 0.4);
 }
 
-
-/* Paso 4. Secciones y títulos*/
-/* Ahora daremos el mismo estilo a «Sobre mí», «Mis proyectos», «Tecnologías y habilidades» y «Contacto».*/
-
-
-/* =========================================
-   4. ESTILO DE LAS SECCIONES
-   ========================================= */
-
-/* Espaciado general de las secciones. */
+/* Aplico espacios internos y un borde inferior a las secciones
+   para mantener una separación entre cada parte del portafolio. */
 #sobre-mi,
 .seccion,
 #contacto {
@@ -205,7 +200,8 @@ nav {
     border-bottom: 1px solid var(--neon);
 }
 
-/* Títulos de las secciones. */
+/* Mantengo los títulos de las secciones con tamaños similares
+   y un estilo que conserva la identidad visual del sitio. */
 #sobre-mi h2,
 .seccion h2,
 #contacto h2 {
@@ -215,14 +211,16 @@ nav {
     letter-spacing: 1px;
 }
 
-/* Texto de la sección Sobre mí. */
+/* Ajusto los párrafos de la sección sobre mí para que
+   tengan un ancho cómodo y un espacio entre ellos. */
 #sobre-mi p {
     max-width: 900px;
     margin-bottom: 16px;
     color: var(--texto-secundario);
 }
 
-/* Descripción que aparece bajo los títulos. */
+/* Mantengo el mismo ancho y color para las descripciones
+   que aparecen en las diferentes secciones. */
 .seccion > p,
 .seccion-descripcion {
     max-width: 900px;
@@ -230,15 +228,9 @@ nav {
     color: var(--texto-secundario);
 }
 
-/* Paso 5. Tarjetas de proyectos*/
-/* Tu HTML ya contiene .proyectos-grid y .proyecto-card. Con CSS Grid podemos organizar los tres proyectos en columnas, con bordes neón y un efecto de elevación.*/
-
-
-/* =========================================
-   5. TARJETAS DE PROYECTOS
-   ========================================= */
-
-/* Distribuye las tarjetas en columnas adaptables. */
+/* Organizo los proyectos en una cuadrícula.
+   La cantidad de columnas se ajusta dependiendo del espacio
+   disponible en la pantalla. */
 .proyectos-grid {
     display: grid;
     grid-template-columns: repeat(
@@ -249,7 +241,8 @@ nav {
     margin-top: 30px;
 }
 
-/* Diseño individual de cada proyecto. */
+/* Defino la apariencia de las tarjetas donde presento
+   cada uno de mis proyectos. */
 .proyecto-card {
     background-color: var(--morado);
     border: 1px solid var(--neon);
@@ -260,59 +253,54 @@ nav {
     align-items: flex-start;
     gap: 14px;
 
-    /* Animación al interactuar con la tarjeta. */
+    /* Agrego una transición para que los cambios al pasar
+       el cursor se vean un poco más suaves. */
     transition:
         transform 0.25s ease,
         background-color 0.25s ease,
         box-shadow 0.25s ease;
 }
 
-/* La tarjeta se eleva ligeramente. */
+/* Al pasar el cursor sobre una tarjeta,
+   esta sube ligeramente, cambia de color y muestra un brillo. */
 .proyecto-card:hover {
     transform: translateY(-5px);
     background-color: var(--morado-claro);
     box-shadow: 0 0 16px rgba(32, 245, 197, 0.15);
 }
 
-/* Título de cada proyecto. */
+/* Ajusto los títulos y textos que aparecen dentro
+   de las tarjetas de proyectos. */
 .proyecto-card h3 {
     font-size: 1rem;
     line-height: 1.5;
 }
 
-/* Descripción del proyecto. */
 .proyecto-card p {
     color: var(--texto-secundario);
 }
 
-/* Destaca las tecnologías utilizadas. */
 .proyecto-card strong {
     color: var(--neon-suave);
 }
 
-/* Enlace al repositorio. */
+/* Dejo los enlaces al final de las tarjetas para mantener
+   una presentación más ordenada. */
 .proyecto-card a {
     margin-top: auto;
     padding-top: 10px;
     font-weight: 700;
     border-bottom: 1px solid var(--neon);
 }
-/*La regla auto-fit hace que las tarjetas ocupen las columnas disponibles sin que tengas que indicar manualmente cuántas habrá en cada resolución.*/
 
-/* Paso 6. Tarjetas de habilidades*/
-/* Aplicaremos un estilo coherente a las tecnologías que conoces: HTML, CSS, JavaScript, Python, Java, Bash, Linux, Git y las demás.*/
-
-
-/* =========================================
-   6. TECNOLOGÍAS Y HABILIDADES
-   ========================================= */
-
-/* Cada categoría tiene su propio espacio. */
+/* Separo cada categoría de habilidades para que
+   el contenido no quede demasiado junto. */
 .categoria-habilidades {
     margin-top: 35px;
 }
 
-/* Título de cada grupo de habilidades. */
+/* Resalto los títulos de las categorías con una línea
+   de color neón al lado izquierdo. */
 .categoria-habilidades h3 {
     font-size: 1rem;
     margin-bottom: 18px;
@@ -320,7 +308,8 @@ nav {
     border-left: 3px solid var(--neon);
 }
 
-/* Cuadrícula de tecnologías. */
+/* Organizo las habilidades en una cuadrícula que se adapta
+   al espacio disponible, igual que las tarjetas de proyectos. */
 .habilidades-grid {
     display: grid;
     grid-template-columns: repeat(
@@ -330,44 +319,38 @@ nav {
     gap: 12px;
 }
 
-/* Tarjeta individual de habilidad. */
+/* Defino el fondo, el borde y los espacios de cada tarjeta
+   donde muestro las tecnologías y herramientas que utilizo. */
 .habilidad-card {
     background-color: rgba(68, 0, 90, 0.7);
     border: 1px solid rgba(32, 245, 197, 0.6);
     padding: 18px;
     border-radius: 4px;
-
     transition:
         border-color 0.25s ease,
         transform 0.25s ease;
 }
 
-/* Efecto al pasar el cursor. */
+/* Resalto cada tarjeta cuando paso el cursor sobre ella. */
 .habilidad-card:hover {
     border-color: var(--neon);
     transform: translateY(-3px);
 }
 
-/* Nombre de la tecnología. */
+/* Ajusto el tamaño y el espacio de los títulos
+   y descripciones de las habilidades. */
 .habilidad-card h4 {
     font-size: 0.85rem;
     margin-bottom: 10px;
 }
 
-/* Descripción de la habilidad. */
 .habilidad-card p {
     font-size: 1rem;
     color: var(--texto-secundario);
 }
-/* Paso 7. Formulario de contacto
-Vamos a darle al formulario un estilo similar al de una terminal futurista, manteniendo campos legibles y un botón destacado.*/
 
-
-/* =========================================
-   7. FORMULARIO DE CONTACTO
-   ========================================= */
-
-/* Limita el ancho y centra el formulario. */
+/* Organizo el formulario de contacto en una sola columna
+   y limito su ancho para que no ocupe toda la pantalla. */
 #contacto form {
     max-width: 650px;
     display: flex;
@@ -375,7 +358,8 @@ Vamos a darle al formulario un estilo similar al de una terminal futurista, mant
     gap: 16px;
 }
 
-/* Estilos compartidos por los campos. */
+/* Doy el mismo estilo a los campos de texto y al área
+   donde se escribe el mensaje. */
 #contacto input,
 #contacto textarea {
     width: 100%;
@@ -388,26 +372,30 @@ Vamos a darle al formulario un estilo similar al de una terminal futurista, mant
     outline: none;
 }
 
-/* Color del texto de ayuda. */
+/* Cambio el color del texto de ayuda que aparece
+   dentro de los campos cuando están vacíos. */
 #contacto input::placeholder,
 #contacto textarea::placeholder {
     color: var(--texto-secundario);
 }
 
-/* Resalta el campo que se está utilizando. */
+/* Cuando selecciono un campo para escribir,
+   resalto su borde y agrego un brillo suave. */
 #contacto input:focus,
 #contacto textarea:focus {
     border-color: var(--neon);
     box-shadow: 0 0 10px rgba(32, 245, 197, 0.15);
 }
 
-/* Área de escritura del mensaje. */
+/* Defino una altura mínima para el espacio del mensaje
+   y permito modificar su tamaño verticalmente. */
 #contacto textarea {
     min-height: 150px;
     resize: vertical;
 }
 
-/* Botón de envío. */
+/* Ajusto la apariencia del botón para que conserve
+   los colores y la fuente utilizados en el portafolio. */
 #contacto button {
     align-self: flex-start;
     padding: 12px 28px;
@@ -421,55 +409,47 @@ Vamos a darle al formulario un estilo similar al de una terminal futurista, mant
     transition: 0.25s ease;
 }
 
-/* Cambio de colores al pasar el cursor. */
+/* Cambio el aspecto del botón cuando paso el cursor
+   sobre él para que se note que es interactivo. */
 #contacto button:hover {
     background-color: var(--neon);
     color: var(--fondo);
     box-shadow: 0 0 15px rgba(32, 245, 197, 0.25);
 }
 
-/* Nota: estos estilos solo cambian la apariencia. Para que el formulario envíe mensajes necesitarás conectarlo a un servicio o desarrollar la lógica correspondiente.
-Paso 8. Pie de página*/
-
-
-/* =========================================
-   8. PIE DE PÁGINA
-   ========================================= */
-
+/* Doy espacio al pie de página y centro el contenido
+   para que quede separado del resto del portafolio. */
 footer {
     padding: 24px 16px;
     text-align: center;
     background-color: var(--fondo);
 }
 
-/* Texto de derechos reservados. */
+/* Ajusto el color y tamaño del texto que aparece
+   al final de la página. */
 footer p {
     color: var(--texto-secundario);
     font-size: 0.95rem;
 }
 
-/* Paso 9. Adaptación para móviles
-Finalmente, vamos a ajustar la navegación, el título y los espacios para que el portafolio se vea bien en móviles y tabletas.*/
+/* Estos ajustes se aplican cuando la pantalla tiene
+   un ancho máximo de 768 píxeles. La idea es acomodar
+   el menú y las secciones para que se puedan visualizar bien. */
+@media (max-width: 768px) {
 
-
-/* =========================================
-   9. DISEÑO RESPONSIVE
-   ========================================= */
-
-/* Ajustes para móviles y pantallas estrechas. */
-@media (max-width: 100px) {
-
-    /* Reduce los espacios del encabezado. */
     header {
         padding: 16px;
     }
 
-    /* Centra el menú cuando no cabe en una fila. */
+    /* Cambio la distribución del menú para colocar
+       sus elementos uno debajo del otro. */
     nav {
         flex-direction: column;
         align-items: flex-start;
     }
 
+    /* Ajusto los espacios entre los enlaces del menú
+       para que puedan acomodarse en pantallas pequeñas. */
     .nav-links {
         justify-content: flex-start;
         gap: 12px 18px;
@@ -479,7 +459,7 @@ Finalmente, vamos a ajustar la navegación, el título y los espacios para que e
         font-size: 0.65rem;
     }
 
-    /* Reduce el tamaño del título principal. */
+    /* Reduzco el alto y los espacios de la sección de inicio. */
     #inicio {
         min-height: 300px;
         padding: 48px 18px;
@@ -489,7 +469,8 @@ Finalmente, vamos a ajustar la navegación, el título y los espacios para que e
         letter-spacing: -1px;
     }
 
-    /* Reduce el espacio lateral de las secciones. */
+    /* También reduzco los espacios internos de las secciones
+       para aprovechar mejor el espacio disponible. */
     #sobre-mi,
     .seccion,
     #contacto {
@@ -497,7 +478,8 @@ Finalmente, vamos a ajustar la navegación, el título y los espacios para que e
     }
 }
 
-/* Ajustes adicionales para móviles muy pequeños. */
+/* Agrego otros ajustes para celulares con pantallas
+   todavía más pequeñas, de máximo 380 píxeles. */
 @media (max-width: 380px) {
 
     body {
@@ -512,24 +494,23 @@ Finalmente, vamos a ajustar la navegación, el título y los espacios para que e
         font-size: 0.6rem;
     }
 
+    /* Reduzco el tamaño del título para evitar
+       que ocupe demasiado espacio en estas pantallas. */
     #inicio h1 {
         font-size: 1.9rem;
     }
 }
-/* Fondo tecnológico para la sección de inicio */
+
+/* En estas reglas preparo la sección de inicio
+   para poder colocar un efecto de brillo en su fondo. */
 #inicio {
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    background:
-        linear-gradient(
-            rgba(36, 0, 47, 0.78),
-            rgba(36, 0, 47, 0.92)
-        ),
-        url("../img/fondo-tech.jpg") center / cover no-repeat;
 }
 
-/* Brillo decorativo neón */
+/* Creo un brillo radial suave utilizando un pseudoelemento.
+   No necesita agregar otro elemento al HTML. */
 #inicio::before {
     content: "";
     position: absolute;
@@ -543,20 +524,14 @@ Finalmente, vamos a ajustar la navegación, el título y los espacios para que e
     z-index: -1;
 }
 
-/* Fondo tecnológico para la sección de inicio */
+/* Repito el mismo efecto en la sección sobre mí
+   para mantener una apariencia similar entre secciones. */
 #sobre-mi {
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    background:
-        linear-gradient(
-            rgba(36, 0, 47, 0.78),
-            rgba(36, 0, 47, 0.92)
-        ),
-        url("../img/proyecto-python.jpg") center / cover no-repeat;
 }
 
-/* Brillo decorativo neón */
 #sobre-mi::before {
     content: "";
     position: absolute;
@@ -570,20 +545,13 @@ Finalmente, vamos a ajustar la navegación, el título y los espacios para que e
     z-index: -1;
 }
 
-/* Fondo tecnológico para la sección de proyectos */
+/* Aplico el mismo efecto de iluminación en proyectos. */
 #proyectos {
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    background:
-        linear-gradient(
-            rgba(36, 0, 47, 0.78),
-            rgba(36, 0, 47, 0.92)
-        ),
-        url("../img/proyecto-web.jpg") center / cover no-repeat;
 }
 
-/* Brillo decorativo neón */
 #proyectos::before {
     content: "";
     position: absolute;
@@ -597,13 +565,16 @@ Finalmente, vamos a ajustar la navegación, el título y los espacios para que e
     z-index: -1;
 }
 
-/* Imágenes de las tarjetas de proyectos */
+/* Evito que las imágenes o el contenido de las tarjetas
+   se salgan de sus límites y ajusto el espacio inferior. */
 .proyecto-card {
     overflow: hidden;
     padding: 0 0 22px;
 }
 
-/* Imagen superior */
+/* Ajusto las imágenes de los proyectos para que ocupen
+   todo el ancho de la tarjeta y mantengan una altura similar.
+   object-fit evita que se deformen. */
 .proyecto-imagen {
     display: block;
     width: 100%;
@@ -613,12 +584,14 @@ Finalmente, vamos a ajustar la navegación, el título y los espacios para que e
     transition: transform 0.4s ease;
 }
 
-/* Efecto zoom */
+/* Amplío ligeramente la imagen cuando paso el cursor
+   sobre la tarjeta del proyecto. */
 .proyecto-card:hover .proyecto-imagen {
     transform: scale(1.04);
 }
 
-/* Espaciado del contenido */
+/* Agrego espacio a los textos y enlaces de las tarjetas
+   para que no queden pegados a los bordes. */
 .proyecto-card h3,
 .proyecto-card p,
 .proyecto-card > a {
@@ -626,12 +599,12 @@ Finalmente, vamos a ajustar la navegación, el título y los espacios para que e
     margin-right: 22px;
 }
 
-/* Mantiene el enlace al final de la tarjeta */
 .proyecto-card > a {
     margin-top: auto;
 }
 
-
+/* Defino el tamaño de los iconos que utilizo
+   para representar las tecnologías y herramientas. */
 .tecnologia-icono {
     width: 42px;
     height: 42px;
@@ -640,25 +613,22 @@ Finalmente, vamos a ajustar la navegación, el título y los espacios para que e
     transition: transform 0.25s ease;
 }
 
+/* Hago que el icono se mueva y aumente un poco
+   cuando paso el cursor sobre una tarjeta de habilidad. */
 .habilidad-card:hover .tecnologia-icono {
     transform: translateY(-4px) scale(1.08);
 }
 
-/*   10. TALLER: CONSUMO DE API REST */
-
+/* Preparo la sección de usuarios para organizar
+   el contenido que se obtiene desde la API. */
 #usuarios-api {
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    background:
-        linear-gradient(
-            rgba(36, 0, 47, 0.88),
-            rgba(36, 0, 47, 0.96)
-        ),
-        url("/img/fondo-tech.jpg") center / cover no-repeat;
 }
 
-/* Panel principal de la API */
+/* Este panel agrupa la información de la API
+   y la separa visualmente del resto de la sección. */
 .api-panel {
     margin-top: 28px;
     padding: 22px;
@@ -668,7 +638,8 @@ Finalmente, vamos a ajustar la navegación, el título y los espacios para que e
     min-width: 0;
 }
 
-/* Encabezado inspirado en una terminal */
+/* Organizo el encabezado del panel y dejo espacio
+   para el indicador que acompaña su título. */
 .api-encabezado {
     display: flex;
     align-items: center;
@@ -681,6 +652,8 @@ Finalmente, vamos a ajustar la navegación, el título y los espacios para que e
     overflow-wrap: anywhere;
 }
 
+/* Creo un pequeño indicador circular de color neón
+   para acompañar el encabezado de la API. */
 .api-indicador {
     width: 10px;
     height: 10px;
@@ -690,7 +663,8 @@ Finalmente, vamos a ajustar la navegación, el título y los espacios para que e
     box-shadow: 0 0 10px var(--neon);
 }
 
-/* Contador y botón de recarga */
+/* Distribuyo el resumen de usuarios y el botón
+   para que se acomoden según el espacio disponible. */
 .api-resumen {
     display: flex;
     justify-content: space-between;
@@ -704,6 +678,8 @@ Finalmente, vamos a ajustar la navegación, el título y los espacios para que e
     color: var(--neon);
 }
 
+/* Defino la apariencia del botón que permite
+   volver a cargar la información de los usuarios. */
 #btn-recargar-usuario {
     padding: 10px 16px;
     background: transparent;
@@ -717,22 +693,28 @@ Finalmente, vamos a ajustar la navegación, el título y los espacios para que e
                 color 0.25s ease;
 }
 
+/* Cambio los colores del botón cuando paso el cursor. */
 #btn-recargar-usuario:hover {
     background: var(--neon);
     color: var(--fondo);
 }
 
+/* Muestro un contorno cuando el botón recibe el foco
+   mediante el teclado, para facilitar su identificación. */
 #btn-recargar-usuario:focus-visible {
     outline: 2px solid var(--neon-suave);
     outline-offset: 4px;
 }
 
-#btn-recargar-usuario {
+/* Estos estilos cambian la apariencia del botón.
+   Actualmente se aplican siempre que el botón tenga este ID. */
+#btn-recargar-usuario.cargando {
     opacity: 0.6;
     cursor: wait;
 }
 
-/* Cuadrícula adaptable de usuarios */
+/* Organizo las tarjetas de usuarios en una cuadrícula
+   que se adapta al espacio disponible. */
 .usuarios-grid {
     display: grid;
     grid-template-columns: repeat(
@@ -742,7 +724,8 @@ Finalmente, vamos a ajustar la navegación, el título y los espacios para que e
     gap: 18px;
 }
 
-/* Tarjeta de cada usuario */
+/* Defino el diseño de cada tarjeta donde se muestra
+   la información recibida desde la API. */
 .usuario-card {
     min-width: 0;
     padding: 20px;
@@ -755,12 +738,16 @@ Finalmente, vamos a ajustar la navegación, el título y los espacios para que e
                 box-shadow 0.25s ease;
 }
 
+/* Agrego un pequeño movimiento y brillo a las tarjetas
+   cuando paso el cursor sobre ellas. */
 .usuario-card:hover {
     transform: translateY(-4px);
     border-color: var(--neon);
     box-shadow: 0 0 16px rgba(32, 245, 197, 0.15);
 }
 
+/* Destaco el número que identifica a cada usuario
+   dentro de su tarjeta. */
 .usuario-numero {
     display: inline-block;
     margin-bottom: 14px;
@@ -778,16 +765,23 @@ Finalmente, vamos a ajustar la navegación, el título y los espacios para que e
 }
 
 .usuario-card p {
-    margin-top: 9px;
+    margin-top: 12px;
     color: var(--texto-secundario);
     font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 6px;
+    align-items: baseline;
 }
 
 .usuario-card strong {
     color: var(--neon-suave);
+    white-space: nowrap;
 }
 
-/* Mensajes de carga y error */
+/* Este estilo se utiliza para mostrar mensajes dentro
+   de la cuadrícula, por ejemplo cuando se está cargando
+   la información o no hay usuarios para mostrar. */
 .api-mensaje {
     grid-column: 1 / -1;
     padding: 24px 12px;
@@ -795,125 +789,114 @@ Finalmente, vamos a ajustar la navegación, el título y los espacios para que e
     text-align: center;
 }
 
+/* Defino un color diferente para los mensajes de error. */
 .api-error {
     color: #ffb4c0;
 }
 
-@media (max-width: 100px) {
+/* Adapto el panel de usuarios a pantallas pequeñas. */
+@media (max-width: 768px) {
+
     .api-panel {
         padding: 16px;
     }
 
+    /* Coloco el resumen y el botón en columna
+       para que tengan más espacio en celulares. */
     .api-resumen {
         align-items: stretch;
         flex-direction: column;
     }
 
-    #btn--usuario {
+    /* Hago que el botón ocupe todo el ancho disponible. */
+    #btn-recargar-usuario {
         width: 100%;
     }
 
+    /* Muestro una sola tarjeta por fila en pantallas pequeñas. */
     .usuarios-grid {
         grid-template-columns: 1fr;
     }
 }
+
+/* Cambio el color del mensaje de estado cuando
+   se presenta algún error al consultar la API. */
 #estado.error {
     color: #ffb4c0;
 }
 
-/* Espacio entre los botones de la portada */
-.acciones-inicio {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-top: 24px;
+/* =========================================
+   12. FONDO GENERAL Y UNIDAD VISUAL
+   ========================================= */
+
+/* Utilizo una misma imagen como fondo del portafolio.
+   La capa morada encima ayuda a conservar los colores
+   del diseño y permite que los textos se sigan leyendo. */
+body {
+    background:
+        linear-gradient(
+            rgba(36, 0, 47, 0.84),
+            rgba(36, 0, 47, 0.84)
+        ),
+        url("../img/fondo-tech.jpg") center center / cover fixed no-repeat;
 }
 
-/* Sección de proyectos */
-.proyectos {
-    padding: 60px 8%;
+/* En la sección de inicio dejo que la imagen de fondo
+   se vea un poco más para darle mayor protagonismo. */
+#inicio {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            rgba(36, 0, 47, 0.48),
+            rgba(36, 0, 47, 0.62)
+        ),
+        url("../img/fondo-tech.jpg") center center / cover no-repeat;
 }
 
-.proyectos h2 {
-    margin-bottom: 28px;
+/* Agrego un brillo suave en el centro de la sección
+   para conservar el estilo tecnológico y los tonos neón. */
+#inicio::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(32, 245, 197, 0.12),
+        transparent 65%
+    );
+    pointer-events: none;
+    z-index: -1;
 }
 
-.proyectos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 24px;
+/* Mantengo las demás secciones con un fondo morado
+   semitransparente para que se pueda apreciar la imagen
+   general sin afectar la lectura del contenido. */
+#sobre-mi,
+#proyectos,
+#usuarios-api,
+#habilidades,
+#contacto {
+    background: rgba(36, 0, 47, 0.78);
 }
 
-.proyecto {
-    padding: 24px;
-    border: 1px solid #20F5C5;
-    border-radius: 12px;
-    background: rgba(0, 0, 0, 0.15);
+/* Oscurezco un poco el encabezado y el pie de página
+   para diferenciarlos del resto del contenido. */
+header,
+footer {
+    background: rgba(36, 0, 47, 0.90);
 }
 
-.proyecto h3 {
-    margin-top: 0;
+/* En celulares quito el fondo fijo para que el desplazamiento
+   de la página funcione de una manera más cómoda. */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    #inicio {
+        background-attachment: scroll;
+    }
 }
 
-.proyecto p {
-    line-height: 1.7;
-}
-
-.proyecto span {
-    color: #20F5C5;
-    font-size: 0.9rem;
-}
-
-/* Perfil y diario de construcción */
-.perfil {
-    padding: 60px 8%;
-    line-height: 1.7;
-}
-
-.entrada {
-    margin-top: 20px;
-    padding: 20px;
-    border-left: 3px solid #20F5C5;
-    background: rgba(0, 0, 0, 0.15);
-}
-
-.entrada span {
-    color: #20F5C5;
-    font-size: 0.9rem;
-}
-
-.entrada h4 {
-    margin-bottom: 8px;
-}
-/* Navegación fija */
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-/* Desplazamiento suave entre secciones */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Evita que la barra tape los títulos */
-#inicio,
-#perfil,
-#detalles {
-    scroll-margin-top: 90px;
-}
-/* Enlaces de las tarjetas de proyectos */
-.proyecto a {
-    display: inline-block;
-    margin-top: 8px;
-    color: #20F5C5;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.proyecto a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}

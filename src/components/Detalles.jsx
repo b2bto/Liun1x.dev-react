@@ -1,7 +1,7 @@
 
 function Detalles() {
   return (
-    <section id="detalles" className="proyectos">
+    <section id="proyectos" className="proyectos">
       <p className="etiqueta">LO QUE ESTOY CONSTRUYENDO</p>
       <h2>Mis proyectos</h2>
 
